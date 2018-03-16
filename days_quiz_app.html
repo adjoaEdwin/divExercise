@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <title>A simple quiz app</title>
+  <style>
+  body{
+    height: 100vh;
+    width: 100vw;
+    background-color: darkcyan;
+  }
+  h2{
+    color: white;
+    font-weight: bolder;
+    font-size: 2rem;
+    border-bottom: 1px dashed white;
+  }
+  p{
+    color: white;
+  }
+  </style>
+</head>
+<body>
+  <center><h2>Your scores will be shown here.</h2><center>
+
+    <script>
+    var marks = 0;
+    var questions = [['How many days are there in a week?', 7],
+      ['How many days make a month on the average?', 30],
+      ['How many weeks make a month?', 4],
+      ['How many months make a year?', 12],
+      ['How many days make a year?', 365],
+      ['How many seasons do we have in Ghana?', 2]
+    ];
+  for (var i = 0; i < questions.length; i++) {
+   askQuestion(questions[i]);
+   function askQuestion(question) {
+     var answer = prompt(question[0], '');
+     if (answer == question[1]) {
+       alert('Correct!');
+       marks++;
+     }else {
+       alert('Sorry. The correct answer is ' + question[1]);
+     }
+   }
+  }
+    </script>
+    <script>
+    var message = ' You got ' + marks;
+    message+= ' out of ' + questions.length + ' questions. ';
+    message+= ' correct ';
+    document.write(' <p> ' + message + ' </p> ');
+    </script>
+</body>
+</html>
